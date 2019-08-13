@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Owls</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-4 mb-4">
+        <h1>Check out our owls!</h1>
+      </div>
+      <% for(var owl of owls) {%>
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <p>Name: <%= owl.name %></p>
+          </div>
+          <div class="row">
+            <p>Age: <%= owl.age %></p>
+          </div>
+        </div>
+        <div class="col-4">
+          <p>
+            <a href="/destroy/<%= owl._id %>">Delete</a> |
+            <a href="/edit/<%= owl._id %>">Edit</a>
+          </p>
+        </div>
+      </div>
+      <hr />
+      <% } %>
+      <div class="row">
+        <a href="/new" class="btn btn-primary">Add New Owl</a>
+      </div>
+    </div>
+  </body>
+</html>
